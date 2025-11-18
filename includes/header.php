@@ -30,6 +30,7 @@
                                 <li><a href="/conseils.php"><i class="fas fa-lightbulb"></i> Conseils</a></li>
                             </ul>
                         </li>
+                        <li><a href="/comment-ca-marche.php" class="<?php echo ($currentPage ?? '') === 'comment-ca-marche' ? 'active' : ''; ?>">Comment ça marche</a></li>
                         <li><a href="/devis.php" class="<?php echo ($currentPage ?? '') === 'devis' ? 'active' : ''; ?>">Demander un devis</a></li>
                         <li><a href="/contact.php" class="<?php echo ($currentPage ?? '') === 'contact' ? 'active' : ''; ?>">Contact</a></li>
                     </ul>

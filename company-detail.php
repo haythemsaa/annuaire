@@ -48,7 +48,10 @@ include __DIR__ . '/includes/header.php';
                     <?php endif; ?>
                 </div>
             </div>
-            <div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="favorite-btn" data-favorite-id="<?php echo $company['id']; ?>" onclick="window.favoriteSystem.toggle(<?php echo $company['id']; ?>)" title="Ajouter aux favoris" style="font-size: 1.5rem; padding: 0.75rem 1rem;">
+                    <i class="far fa-heart"></i>
+                </button>
                 <a href="/devis.php" class="btn btn-primary btn-large">
                     <i class="fas fa-file-invoice"></i> Demander un devis
                 </a>

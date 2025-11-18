@@ -123,9 +123,14 @@ include __DIR__ . '/includes/header.php';
                                     <?php echo escape($company['location']); ?>
                                 </div>
                             </div>
-                            <?php if ($company['verified']): ?>
-                                <div class="company-verified"><i class="fas fa-check-circle"></i> Vérifié</div>
-                            <?php endif; ?>
+                            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                <button class="favorite-btn" data-favorite-id="<?php echo $company['id']; ?>" onclick="window.favoriteSystem.toggle(<?php echo $company['id']; ?>)" title="Ajouter aux favoris">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <?php if ($company['verified']): ?>
+                                    <div class="company-verified"><i class="fas fa-check-circle"></i> Vérifié</div>
+                                <?php endif; ?>
+                            </div>
                         </div>
 
                         <div class="company-rating">

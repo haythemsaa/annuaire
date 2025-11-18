@@ -164,5 +164,6 @@
     </script>
 
     <script src="<?php echo ASSETS_PATH; ?>/js/main.js"></script>
+    <script src="<?php echo ASSETS_PATH; ?>/js/favorites.js"></script>
 </body>
 </html>
