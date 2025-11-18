@@ -11,6 +11,7 @@
                     <ul>
                         <li><a href="/index.php">Accueil</a></li>
                         <li><a href="/devis.php">Demander un devis</a></li>
+                        <li><a href="/faq.php">FAQ - Questions fréquentes</a></li>
                         <li><a href="/contact.php">Contact</a></li>
                         <li><a href="/conseils.php">Conseils</a></li>
                         <li><a href="/admin/">Administration</a></li>
