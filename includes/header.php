@@ -34,6 +34,7 @@
                         </li>
                         <li><a href="/comment-ca-marche.php" class="<?php echo ($currentPage ?? '') === 'comment-ca-marche' ? 'active' : ''; ?>">Comment ça marche</a></li>
                         <li><a href="/carte.php" class="<?php echo ($currentPage ?? '') === 'carte' ? 'active' : ''; ?>"><i class="fas fa-map-marked-alt"></i> Carte</a></li>
+                        <li><a href="/mes-favoris.php" class="<?php echo ($currentPage ?? '') === 'favoris' ? 'active' : ''; ?>"><i class="fas fa-heart"></i> Favoris</a></li>
                         <li><a href="/faq.php" class="<?php echo ($currentPage ?? '') === 'faq' ? 'active' : ''; ?>">FAQ</a></li>
                         <li><a href="/devis.php" class="<?php echo ($currentPage ?? '') === 'devis' ? 'active' : ''; ?>">Demander un devis</a></li>
                         <li><a href="/contact.php" class="<?php echo ($currentPage ?? '') === 'contact' ? 'active' : ''; ?>">Contact</a></li>

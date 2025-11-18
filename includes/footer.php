@@ -10,11 +10,11 @@
                     <h4>Liens utiles</h4>
                     <ul>
                         <li><a href="/index.php">Accueil</a></li>
+                        <li><a href="/a-propos.php">À propos</a></li>
                         <li><a href="/devis.php">Demander un devis</a></li>
                         <li><a href="/blog.php">Blog & Conseils</a></li>
                         <li><a href="/faq.php">FAQ - Questions fréquentes</a></li>
                         <li><a href="/contact.php">Contact</a></li>
-                        <li><a href="/admin/">Administration</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

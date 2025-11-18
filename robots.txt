@@ -1,0 +1,24 @@
+# robots.txt pour Annuaire Déménageurs Belgique
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://votresite.be/sitemap.xml
+
+# Fichiers à ne pas indexer
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /assets/
+Disallow: /init_db.php
+Disallow: /database.sql
+
+# Paramètres de recherche
+Disallow: /*?search=
+Disallow: /*?service=
+Disallow: /*?zone=
+Disallow: /*?price=
+
+# Crawl-delay (optionnel, 1 seconde)
+Crawl-delay: 1

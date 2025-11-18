@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://votresite.be/index.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Pages principales -->
+    <url>
+        <loc>https://votresite.be/devis.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/comment-ca-marche.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/a-propos.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/contact.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Outils -->
+    <url>
+        <loc>https://votresite.be/calculateur.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/compare.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/checklist.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/tarifs.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/carte.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Ressources -->
+    <url>
+        <loc>https://votresite.be/conseils.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/faq.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/blog.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/mes-favoris.php</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Articles Blog -->
+    <url>
+        <loc>https://votresite.be/blog/preparer-demenagement-3-mois-avance.php</loc>
+        <lastmod>2024-11-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Pages entreprises (exemples - à générer dynamiquement) -->
+    <url>
+        <loc>https://votresite.be/company-detail.php?id=1</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/company-detail.php?id=2</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://votresite.be/company-detail.php?id=3</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>
