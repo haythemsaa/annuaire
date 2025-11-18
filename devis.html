@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demander un devis - Annuaire Déménagement</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-truck-moving"></i> Annuaire Déménagement</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="devis.html" class="active">Demander un devis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Demandez votre devis gratuit</h2>
+                <p>Recevez jusqu'à 5 devis personnalisés en quelques minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="section-title">Détails de votre déménagement</h2>
+                <form id="devisForm">
+                    <!-- Type de déménagement -->
+                    <div class="form-group">
+                        <label for="typeMove">Type de déménagement *</label>
+                        <select id="typeMove" name="typeMove" required>
+                            <option value="">Sélectionnez le type</option>
+                            <option value="residential">Résidentiel</option>
+                            <option value="commercial">Professionnel / Commercial</option>
+                            <option value="office">Bureau</option>
+                        </select>
+                    </div>
+
+                    <!-- Adresses -->
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Adresses</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fromAddress">Adresse de départ *</label>
+                            <input type="text" id="fromAddress" name="fromAddress" placeholder="Rue, numéro, code postal, ville" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="toAddress">Adresse d'arrivée *</label>
+                            <input type="text" id="toAddress" name="toAddress" placeholder="Rue, numéro, code postal, ville" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fromFloor">Étage de départ</label>
+                            <select id="fromFloor" name="fromFloor">
+                                <option value="0">Rez-de-chaussée</option>
+                                <option value="1">1er étage</option>
+                                <option value="2">2ème étage</option>
+                                <option value="3">3ème étage</option>
+                                <option value="4">4ème étage et plus</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="toFloor">Étage d'arrivée</label>
+                            <select id="toFloor" name="toFloor">
+                                <option value="0">Rez-de-chaussée</option>
+                                <option value="1">1er étage</option>
+                                <option value="2">2ème étage</option>
+                                <option value="3">3ème étage</option>
+                                <option value="4">4ème étage et plus</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="fromElevator" name="fromElevator">
+                                Ascenseur disponible au départ
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="toElevator" name="toElevator">
+                                Ascenseur disponible à l'arrivée
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Taille du logement -->
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Taille du logement</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rooms">Nombre de pièces *</label>
+                            <select id="rooms" name="rooms" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="studio">Studio</option>
+                                <option value="1">1 chambre</option>
+                                <option value="2">2 chambres</option>
+                                <option value="3">3 chambres</option>
+                                <option value="4">4 chambres</option>
+                                <option value="5+">5 chambres ou plus</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="surface">Surface approximative (m²)</label>
+                            <input type="number" id="surface" name="surface" placeholder="Ex: 80">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="volume">Volume estimé (m³)</label>
+                        <input type="number" id="volume" name="volume" placeholder="Si vous connaissez le volume">
+                    </div>
+
+                    <!-- Services supplémentaires -->
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Services supplémentaires</h3>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="servicePacking" name="servicePacking">
+                            Emballage / Déballage
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="serviceAssembly" name="serviceAssembly">
+                            Montage / Démontage de meubles
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="serviceLift" name="serviceLift">
+                            Location de lift (monte-meubles)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="serviceStorage" name="serviceStorage">
+                            Stockage temporaire
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="serviceCleaning" name="serviceCleaning">
+                            Nettoyage de fin de bail
+                        </label>
+                    </div>
+
+                    <!-- Date souhaitée -->
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Date du déménagement</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="moveDate">Date souhaitée *</label>
+                            <input type="date" id="moveDate" name="moveDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="flexibility">Flexibilité</label>
+                            <select id="flexibility" name="flexibility">
+                                <option value="fixed">Date fixe</option>
+                                <option value="week">Flexible (±1 semaine)</option>
+                                <option value="month">Flexible (±1 mois)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Informations de contact -->
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Vos coordonnées</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <!-- Message additionnel -->
+                    <div class="form-group">
+                        <label for="message">Informations complémentaires</label>
+                        <textarea id="message" name="message" placeholder="Décrivez tout détail important : objets fragiles, piano, œuvres d'art, parking difficile, etc."></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Envoyer ma demande de devis
+                        </button>
+                    </div>
+
+                    <p style="text-align: center; color: #6b7280; margin-top: 1rem; font-size: 0.875rem;">
+                        * Champs obligatoires. Vos informations sont confidentielles et ne seront jamais partagées.
+                    </p>
+                </form>
+
+                <div id="formSuccess" style="display: none; text-align: center; padding: 2rem; background-color: #d1fae5; border-radius: 0.5rem; margin-top: 2rem;">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                    <h3 style="color: #065f46; margin-bottom: 0.5rem;">Demande envoyée avec succès !</h3>
+                    <p style="color: #047857;">Vous recevrez vos devis par email dans les prochaines 24h.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-edit"></i>
+                    <h3>1. Remplissez le formulaire</h3>
+                    <p>Décrivez votre projet de déménagement en quelques minutes</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-search"></i>
+                    <h3>2. Nous trouvons les pros</h3>
+                    <p>Nous sélectionnons les meilleurs déménageurs pour votre besoin</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>3. Recevez vos devis</h3>
+                    <p>Jusqu'à 5 devis gratuits et sans engagement</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>4. Choisissez le meilleur</h3>
+                    <p>Comparez et choisissez l'offre qui vous convient</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>À propos</h4>
+                    <p>Nous sommes le premier annuaire de déménageurs professionnels. Trouvez rapidement et facilement le déménageur idéal pour votre projet.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="devis.html">Demander un devis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Plan du site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Déménagement résidentiel</a></li>
+                        <li><a href="#">Déménagement professionnel</a></li>
+                        <li><a href="#">Stockage</a></li>
+                        <li><a href="#">Location de lift</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +32 2 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@annuaire-demenagement.be</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bruxelles, Belgique</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Annuaire Déménagement. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/devis.js"></script>
+</body>
+</html>
