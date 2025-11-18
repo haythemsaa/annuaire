@@ -27,6 +27,7 @@
                                 <li><a href="/calculateur.php"><i class="fas fa-calculator"></i> Calculateur de prix</a></li>
                                 <li><a href="/compare.php"><i class="fas fa-balance-scale"></i> Comparateur</a></li>
                                 <li><a href="/checklist.php"><i class="fas fa-tasks"></i> Checklist</a></li>
+                                <li><a href="/tarifs.php"><i class="fas fa-euro-sign"></i> Guide des tarifs</a></li>
                                 <li><a href="/conseils.php"><i class="fas fa-lightbulb"></i> Conseils</a></li>
                             </ul>
                         </li>

@@ -22,8 +22,8 @@
                         <li><a href="/calculateur.php">Calculateur de prix</a></li>
                         <li><a href="/compare.php">Comparateur d'entreprises</a></li>
                         <li><a href="/checklist.php">Checklist interactive</a></li>
+                        <li><a href="/tarifs.php">Guide des tarifs</a></li>
                         <li><a href="/index.php?service=demenagement">Déménagement</a></li>
-                        <li><a href="/index.php?service=stockage">Stockage</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
