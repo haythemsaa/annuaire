@@ -148,6 +148,31 @@ if (!empty($company['reviews'])) {
                         </span>
                     <?php endif; ?>
                 </div>
+
+                <!-- Social Sharing Buttons -->
+                <div style="margin-top: 1.5rem;">
+                    <div class="share-buttons">
+                        <span class="share-label">Partager :</span>
+                        <button class="share-btn share-btn-facebook" onclick="window.shareSystem.facebook('<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>', '<?php echo addslashes($company['name']); ?>')" title="Partager sur Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="share-btn share-btn-twitter" onclick="window.shareSystem.twitter('<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>', '<?php echo addslashes($company['name']); ?> - Déménageur professionnel')" title="Partager sur Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="share-btn share-btn-linkedin" onclick="window.shareSystem.linkedin('<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>', '<?php echo addslashes($company['name']); ?>')" title="Partager sur LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button class="share-btn share-btn-whatsapp" onclick="window.shareSystem.whatsapp('<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>', '<?php echo addslashes($company['name']); ?> - Déménageur professionnel')" title="Partager sur WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button class="share-btn share-btn-email" onclick="window.shareSystem.email('<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>', '<?php echo addslashes($company['name']); ?>', 'Découvrez cette entreprise de déménagement recommandée')" title="Partager par email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="share-btn share-btn-copy" onclick="window.shareSystem.copy('<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>')" title="Copier le lien">
+                            <i class="fas fa-link"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <button class="favorite-btn" data-favorite-id="<?php echo $company['id']; ?>" onclick="window.favoriteSystem.toggle(<?php echo $company['id']; ?>)" title="Ajouter aux favoris" style="font-size: 1.5rem; padding: 0.75rem 1rem;">
