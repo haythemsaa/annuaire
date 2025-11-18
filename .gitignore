@@ -1,0 +1,40 @@
+# Base de données
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Fichiers temporaires
+*.log
+*.tmp
+*.cache
+
+# Uploads
+uploads/
+
+# Fichiers de configuration sensibles (ne pas commiter les mots de passe en prod)
+# config/config.local.php
+
+# Composer
+vendor/
+composer.lock
+
+# Node modules (si vous ajoutez du build JS)
+node_modules/
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers temporaires PHP
+*.php~
