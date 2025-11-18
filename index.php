@@ -138,6 +138,35 @@ include __DIR__ . '/includes/header.php';
                             <span class="rating-number"><?php echo $company['rating']; ?>/5 (<?php echo $company['reviews']; ?> avis)</span>
                         </div>
 
+                        <!-- Quality Badges -->
+                        <div class="quality-badges" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                            <?php if ($company['rating'] >= 4.5): ?>
+                                <span class="badge badge-gold">
+                                    <i class="fas fa-trophy"></i> Top noté
+                                </span>
+                            <?php endif; ?>
+                            <?php if ($company['verified']): ?>
+                                <span class="badge badge-blue">
+                                    <i class="fas fa-certificate"></i> Certifié
+                                </span>
+                            <?php endif; ?>
+                            <?php if ($company['price_range'] === 'low'): ?>
+                                <span class="badge badge-green">
+                                    <i class="fas fa-euro-sign"></i> Meilleur prix
+                                </span>
+                            <?php endif; ?>
+                            <?php if ($company['reviews'] >= 50): ?>
+                                <span class="badge badge-purple">
+                                    <i class="fas fa-users"></i> Très populaire
+                                </span>
+                            <?php endif; ?>
+                            <?php if (isset($company['years_experience']) && $company['years_experience'] >= 10): ?>
+                                <span class="badge badge-orange">
+                                    <i class="fas fa-award"></i> +10 ans d'expérience
+                                </span>
+                            <?php endif; ?>
+                        </div>
+
                         <p class="company-description"><?php echo escape($company['description']); ?></p>
 
                         <div class="company-services">

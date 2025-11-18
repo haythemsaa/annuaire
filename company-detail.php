@@ -47,6 +47,35 @@ include __DIR__ . '/includes/header.php';
                         </div>
                     <?php endif; ?>
                 </div>
+
+                <!-- Quality Badges -->
+                <div class="quality-badges" style="margin-bottom: 1.5rem;">
+                    <?php if ($company['rating'] >= 4.5): ?>
+                        <span class="badge badge-gold">
+                            <i class="fas fa-trophy"></i> Top noté
+                        </span>
+                    <?php endif; ?>
+                    <?php if ($company['verified']): ?>
+                        <span class="badge badge-blue">
+                            <i class="fas fa-certificate"></i> Certifié
+                        </span>
+                    <?php endif; ?>
+                    <?php if ($company['price_range'] === 'low'): ?>
+                        <span class="badge badge-green">
+                            <i class="fas fa-euro-sign"></i> Meilleur prix
+                        </span>
+                    <?php endif; ?>
+                    <?php if ($company['reviews'] >= 50): ?>
+                        <span class="badge badge-purple">
+                            <i class="fas fa-users"></i> Très populaire
+                        </span>
+                    <?php endif; ?>
+                    <?php if (isset($company['years_experience']) && $company['years_experience'] >= 10): ?>
+                        <span class="badge badge-orange">
+                            <i class="fas fa-award"></i> +10 ans d'expérience
+                        </span>
+                    <?php endif; ?>
+                </div>
             </div>
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <button class="favorite-btn" data-favorite-id="<?php echo $company['id']; ?>" onclick="window.favoriteSystem.toggle(<?php echo $company['id']; ?>)" title="Ajouter aux favoris" style="font-size: 1.5rem; padding: 0.75rem 1rem;">
