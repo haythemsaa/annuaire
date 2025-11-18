@@ -325,3 +325,38 @@ function timeAgo($datetime) {
         return "Il y a " . $years . " an" . ($years > 1 ? 's' : '');
     }
 }
+
+/**
+ * Récupère les statistiques pour la page d'accueil
+ */
+function getHomepageStats() {
+    $pdo = getDatabase();
+
+    // Nombre total d'entreprises
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM companies WHERE verified = 1");
+    $totalCompanies = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+    // Nombre total d'avis
+    $stmt = $pdo->query("SELECT SUM(reviews) as total FROM companies");
+    $totalReviews = $stmt->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
+
+    // Note moyenne
+    $stmt = $pdo->query("SELECT AVG(rating) as average FROM companies WHERE verified = 1");
+    $averageRating = round($stmt->fetch(PDO::FETCH_ASSOC)['average'], 1);
+
+    // Nombre de devis cette semaine
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM quote_requests WHERE created_at >= datetime('now', '-7 days')");
+    $weeklyQuotes = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+    // Taux de satisfaction (basé sur les notes >= 4)
+    $stmt = $pdo->query("SELECT COUNT(*) * 100.0 / (SELECT COUNT(*) FROM companies WHERE verified = 1) as satisfaction FROM companies WHERE verified = 1 AND rating >= 4.0");
+    $satisfaction = round($stmt->fetch(PDO::FETCH_ASSOC)['satisfaction'], 0);
+
+    return [
+        'total_companies' => $totalCompanies,
+        'total_reviews' => $totalReviews,
+        'average_rating' => $averageRating,
+        'weekly_quotes' => $weeklyQuotes,
+        'satisfaction' => $satisfaction
+    ];
+}

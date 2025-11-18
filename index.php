@@ -25,6 +25,9 @@ if (isset($_GET['price']) && !empty($_GET['price'])) {
 $companies = getAllCompanies($filters);
 $services = getAllServices();
 
+// Récupérer les statistiques
+$stats = getHomepageStats();
+
 include __DIR__ . '/includes/header.php';
 ?>
 
@@ -100,6 +103,95 @@ include __DIR__ . '/includes/header.php';
         </div>
     </div>
 </section>
+
+<!-- Dynamic Stats Section -->
+<section style="padding: 3rem 0; background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%); color: white;">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: white;">Nos chiffres en temps réel</h2>
+            <p style="opacity: 0.9; font-size: 1.125rem;">Des milliers de clients satisfaits nous font confiance</p>
+        </div>
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+            <div class="stat-item">
+                <div class="stat-icon" style="font-size: 3rem; margin-bottom: 0.5rem;">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;" data-target="<?php echo $stats['total_companies']; ?>">0</div>
+                <div class="stat-label" style="font-size: 1rem; opacity: 0.9;">Entreprises vérifiées</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon" style="font-size: 3rem; margin-bottom: 0.5rem;">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;" data-target="<?php echo $stats['total_reviews']; ?>">0</div>
+                <div class="stat-label" style="font-size: 1rem; opacity: 0.9;">Avis clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon" style="font-size: 3rem; margin-bottom: 0.5rem;">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;" data-target="<?php echo $stats['average_rating']; ?>" data-decimals="1">0</div>
+                <div class="stat-label" style="font-size: 1rem; opacity: 0.9;">Note moyenne / 5</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon" style="font-size: 3rem; margin-bottom: 0.5rem;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;" data-target="<?php echo $stats['satisfaction']; ?>">0</div>
+                <div class="stat-label" style="font-size: 1rem; opacity: 0.9;">% de satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon" style="font-size: 3rem; margin-bottom: 0.5rem;">
+                    <i class="fas fa-file-invoice"></i>
+                </div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;" data-target="<?php echo $stats['weekly_quotes']; ?>">0</div>
+                <div class="stat-label" style="font-size: 1rem; opacity: 0.9;">Devis cette semaine</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Animated counter for stats
+function animateCounter(element) {
+    const target = parseFloat(element.getAttribute('data-target'));
+    const decimals = parseInt(element.getAttribute('data-decimals')) || 0;
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60 FPS
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = decimals > 0 ? target.toFixed(decimals) : Math.floor(target);
+            clearInterval(timer);
+        } else {
+            element.textContent = decimals > 0 ? current.toFixed(decimals) : Math.floor(current);
+        }
+    }, 16);
+}
+
+// Intersection Observer to trigger animation when visible
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                if (counter.textContent === '0' || counter.textContent === '0.0') {
+                    animateCounter(counter);
+                }
+            });
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+// Observe the stats section
+const statsSection = document.querySelector('.stats-grid');
+if (statsSection) {
+    observer.observe(statsSection.parentElement);
+}
+</script>
 
 <!-- Companies Listing -->
 <section class="companies-section">
