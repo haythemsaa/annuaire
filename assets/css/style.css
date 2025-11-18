@@ -294,14 +294,51 @@ body {
 .company-card {
     background-color: var(--white);
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 0;
     box-shadow: var(--shadow);
     transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .company-card:hover {
     box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+}
+
+/* Card Top Color Bar */
+.card-top-bar {
+    height: 4px;
+    width: 100%;
+}
+
+.card-top-bar-low {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.card-top-bar-medium {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.card-top-bar-high {
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+/* Add padding to card content */
+.company-card > .company-header,
+.company-card > .company-rating,
+.company-card > .quality-badges,
+.company-card > .company-description,
+.company-card > .company-services-icons,
+.company-card > .company-stats,
+.company-card > .company-price,
+.company-card > .company-actions {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.company-card > .company-header {
+    padding-top: 1.5rem;
 }
 
 .company-header {
@@ -368,9 +405,72 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Price Indicators */
+.price-indicator {
+    padding: 0.375rem 0.875rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.price-indicator-low {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.price-indicator-medium {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.price-indicator-high {
+    background-color: #ede9fe;
+    color: #5b21b6;
+}
+
+/* Company Stats */
+.company-stats {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin: 1rem 0;
+}
+
+.company-stats > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.company-stats i {
+    font-size: 1rem;
+}
+
+/* Service Icons */
+.service-icon-item {
+    transition: all 0.2s;
+}
+
+.service-icon-item:hover {
+    transform: scale(1.05);
+}
+
+.service-icon-item i {
+    transition: color 0.2s;
+}
+
+.service-icon-item:hover i {
+    color: var(--primary-color) !important;
+}
+
 .company-actions {
     display: flex;
     gap: 1rem;
+    padding-bottom: 1.5rem !important;
 }
 
 .btn-secondary {

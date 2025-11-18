@@ -115,6 +115,9 @@ include __DIR__ . '/includes/header.php';
             <?php else: ?>
                 <?php foreach ($companies as $company): ?>
                     <div class="company-card">
+                        <!-- Price Range Color Bar -->
+                        <div class="card-top-bar card-top-bar-<?php echo $company['price_range']; ?>"></div>
+
                         <div class="company-header">
                             <div>
                                 <h3 class="company-name"><?php echo escape($company['name']); ?></h3>
@@ -169,17 +172,53 @@ include __DIR__ . '/includes/header.php';
 
                         <p class="company-description"><?php echo escape($company['description']); ?></p>
 
-                        <div class="company-services">
-                            <?php foreach ($company['services'] as $service): ?>
-                                <span class="service-tag"><?php echo escape($service['name']); ?></span>
+                        <!-- Service Icons Preview -->
+                        <div class="company-services-icons" style="display: flex; gap: 0.75rem; margin: 1rem 0; flex-wrap: wrap;">
+                            <?php
+                            $maxServicesToShow = 4;
+                            $servicesCount = count($company['services']);
+                            $servicesToDisplay = array_slice($company['services'], 0, $maxServicesToShow);
+                            foreach ($servicesToDisplay as $service):
+                            ?>
+                                <div class="service-icon-item" style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #6b7280;">
+                                    <i class="fas <?php echo escape($service['icon']); ?>" style="color: #2563eb; font-size: 1rem;"></i>
+                                    <span><?php echo escape($service['name']); ?></span>
+                                </div>
                             <?php endforeach; ?>
+                            <?php if ($servicesCount > $maxServicesToShow): ?>
+                                <span style="color: #9ca3af; font-size: 0.875rem;">+<?php echo $servicesCount - $maxServicesToShow; ?> autres</span>
+                            <?php endif; ?>
                         </div>
 
-                        <div class="company-price"><?php echo escape($company['price_label']); ?>
-                            <?php
-                            $priceLabels = ['low' => 'Économique', 'medium' => 'Prix moyen', 'high' => 'Premium'];
-                            echo $priceLabels[$company['price_range']] ?? '';
-                            ?>
+                        <!-- Company Stats -->
+                        <div class="company-stats" style="display: flex; gap: 1.5rem; padding: 1rem 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; margin: 1rem 0;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-comment-dots" style="color: #10b981;"></i>
+                                <span style="font-size: 0.875rem; color: #6b7280;"><?php echo $company['reviews']; ?> avis</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-clock" style="color: #f59e0b;"></i>
+                                <span style="font-size: 0.875rem; color: #6b7280;">Réponse 24h</span>
+                            </div>
+                            <?php if (isset($company['years_experience']) && $company['years_experience'] > 0): ?>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-calendar-check" style="color: #8b5cf6;"></i>
+                                <span style="font-size: 0.875rem; color: #6b7280;"><?php echo $company['years_experience']; ?>+ ans</span>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="company-price" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-size: 0.75rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em;">À partir de</div>
+                                <div style="font-size: 1.5rem; color: #2563eb; font-weight: 700;"><?php echo escape($company['price_label']); ?></div>
+                            </div>
+                            <div class="price-indicator price-indicator-<?php echo $company['price_range']; ?>">
+                                <?php
+                                $priceLabels = ['low' => 'Économique', 'medium' => 'Prix moyen', 'high' => 'Premium'];
+                                echo $priceLabels[$company['price_range']] ?? '';
+                                ?>
+                            </div>
                         </div>
 
                         <div class="company-actions">
