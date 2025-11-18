@@ -29,7 +29,80 @@ $services = getAllServices();
 $stats = getHomepageStats();
 
 include __DIR__ . '/includes/header.php';
+
+// Schema.org structured data for Website
+$websiteSchema = [
+    "@context" => "https://schema.org",
+    "@type" => "WebSite",
+    "name" => SITE_NAME,
+    "url" => "https://" . $_SERVER['HTTP_HOST'],
+    "potentialAction" => [
+        "@type" => "SearchAction",
+        "target" => [
+            "@type" => "EntryPoint",
+            "urlTemplate" => "https://" . $_SERVER['HTTP_HOST'] . "/index.php?search={search_term_string}"
+        ],
+        "query-input" => "required name=search_term_string"
+    ]
+];
+
+// Schema.org structured data for ItemList of moving companies
+$itemListSchema = [
+    "@context" => "https://schema.org",
+    "@type" => "ItemList",
+    "itemListElement" => []
+];
+
+foreach (array_slice($companies, 0, 10) as $index => $company) {
+    $itemListSchema['itemListElement'][] = [
+        "@type" => "ListItem",
+        "position" => $index + 1,
+        "item" => [
+            "@type" => "LocalBusiness",
+            "name" => $company['name'],
+            "description" => $company['description'],
+            "telephone" => $company['phone'],
+            "aggregateRating" => [
+                "@type" => "AggregateRating",
+                "ratingValue" => $company['rating'],
+                "reviewCount" => $company['reviews']
+            ],
+            "url" => "https://" . $_SERVER['HTTP_HOST'] . "/company-detail.php?id=" . $company['id']
+        ]
+    ];
+}
+
+// Organization Schema
+$organizationSchema = [
+    "@context" => "https://schema.org",
+    "@type" => "Organization",
+    "name" => SITE_NAME,
+    "url" => "https://" . $_SERVER['HTTP_HOST'],
+    "logo" => "https://" . $_SERVER['HTTP_HOST'] . "/assets/images/logo.png",
+    "contactPoint" => [
+        "@type" => "ContactPoint",
+        "telephone" => SITE_PHONE,
+        "contactType" => "Customer Service",
+        "email" => SITE_EMAIL,
+        "areaServed" => "BE",
+        "availableLanguage" => ["French", "Dutch"]
+    ],
+    "sameAs" => []
+];
 ?>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+<?php echo json_encode($websiteSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
+
+<script type="application/ld+json">
+<?php echo json_encode($itemListSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
+
+<script type="application/ld+json">
+<?php echo json_encode($organizationSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
 
 <!-- Hero Section -->
 <section class="hero">

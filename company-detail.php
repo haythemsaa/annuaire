@@ -23,7 +23,79 @@ $pageTitle = $company['name'];
 $pageDescription = $company['description'];
 
 include __DIR__ . '/includes/header.php';
+
+// Schema.org structured data for LocalBusiness
+$schemaData = [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => $company['name'],
+    "description" => $company['description'],
+    "image" => "https://via.placeholder.com/800x600",
+    "telephone" => $company['phone'],
+    "email" => $company['email'],
+    "url" => $company['website'],
+    "address" => [
+        "@type" => "PostalAddress",
+        "streetAddress" => $company['address'],
+        "addressLocality" => $company['location'],
+        "addressCountry" => "BE"
+    ],
+    "geo" => [
+        "@type" => "GeoCoordinates",
+        "latitude" => "50.8503",
+        "longitude" => "4.3517"
+    ],
+    "aggregateRating" => [
+        "@type" => "AggregateRating",
+        "ratingValue" => $company['rating'],
+        "reviewCount" => $company['reviews'],
+        "bestRating" => "5",
+        "worstRating" => "1"
+    ],
+    "priceRange" => str_repeat('€', ['low' => 1, 'medium' => 2, 'high' => 3][$company['price_range']] ?? 2),
+    "openingHoursSpecification" => [
+        [
+            "@type" => "OpeningHoursSpecification",
+            "dayOfWeek" => ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens" => "08:00",
+            "closes" => "18:00"
+        ],
+        [
+            "@type" => "OpeningHoursSpecification",
+            "dayOfWeek" => "Saturday",
+            "opens" => "09:00",
+            "closes" => "15:00"
+        ]
+    ]
+];
+
+// Add reviews to schema if available
+if (!empty($company['reviews'])) {
+    $schemaReviews = [];
+    foreach (array_slice($company['reviews'], 0, 5) as $review) {
+        $schemaReviews[] = [
+            "@type" => "Review",
+            "author" => [
+                "@type" => "Person",
+                "name" => $review['customer_name']
+            ],
+            "reviewRating" => [
+                "@type" => "Rating",
+                "ratingValue" => $review['rating'],
+                "bestRating" => "5"
+            ],
+            "reviewBody" => $review['comment'],
+            "datePublished" => date('Y-m-d', strtotime($review['created_at']))
+        ];
+    }
+    $schemaData['review'] = $schemaReviews;
+}
 ?>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+<?php echo json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
 
 <!-- Company Detail Header -->
 <div class="company-detail-header">
