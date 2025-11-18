@@ -19,6 +19,17 @@
                 <nav class="nav">
                     <ul>
                         <li><a href="/index.php" class="<?php echo ($currentPage ?? '') === 'index' ? 'active' : ''; ?>">Accueil</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="<?php echo in_array($currentPage ?? '', ['calculateur', 'compare', 'conseils', 'checklist']) ? 'active' : ''; ?>">
+                                Outils <i class="fas fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/calculateur.php"><i class="fas fa-calculator"></i> Calculateur de prix</a></li>
+                                <li><a href="/compare.php"><i class="fas fa-balance-scale"></i> Comparateur</a></li>
+                                <li><a href="/checklist.php"><i class="fas fa-tasks"></i> Checklist</a></li>
+                                <li><a href="/conseils.php"><i class="fas fa-lightbulb"></i> Conseils</a></li>
+                            </ul>
+                        </li>
                         <li><a href="/devis.php" class="<?php echo ($currentPage ?? '') === 'devis' ? 'active' : ''; ?>">Demander un devis</a></li>
                         <li><a href="/contact.php" class="<?php echo ($currentPage ?? '') === 'contact' ? 'active' : ''; ?>">Contact</a></li>
                     </ul>
