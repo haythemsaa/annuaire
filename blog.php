@@ -18,63 +18,63 @@ $articles = [
         'image' => 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
         'category' => 'Préparation',
         'date' => '2024-11-15',
-        'read_time' => '8 min',
+        'read_time' => '15 min',
         'author' => 'Marie Dubois'
     ],
     [
         'id' => 2,
-        'title' => 'Budget déménagement : comment économiser jusqu\'à 40%',
-        'slug' => 'budget-demenagement-economiser-40-pourcent',
-        'excerpt' => 'Découvrez toutes nos astuces pour réduire considérablement le coût de votre déménagement sans sacrifier la qualité du service.',
-        'image' => 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800',
+        'title' => 'Budget Réaliste pour un Déménagement en Belgique (2024)',
+        'slug' => 'budget-realiste-demenagement-belgique',
+        'excerpt' => 'Découvrez combien coûte vraiment un déménagement en Belgique en 2024. Guide complet avec prix moyens, astuces pour économiser et budget détaillé par type de logement.',
+        'image' => 'https://images.unsplash.com/photo-1554224311-beee460ae6ba?w=800',
         'category' => 'Budget',
-        'date' => '2024-11-12',
-        'read_time' => '6 min',
-        'author' => 'Pierre Martin'
+        'date' => '2024-11-10',
+        'read_time' => '12 min',
+        'author' => 'Thomas Leroy'
     ],
     [
         'id' => 3,
-        'title' => 'Les 10 erreurs à éviter lors d\'un déménagement',
-        'slug' => '10-erreurs-eviter-demenagement',
-        'excerpt' => 'Évitez les pièges courants ! Notre guide des erreurs les plus fréquentes et comment les anticiper pour un déménagement sans accroc.',
-        'image' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800',
+        'title' => 'Changement d\'Adresse en Belgique : Guide Complet 2024',
+        'slug' => 'declarer-changement-adresse-belgique',
+        'excerpt' => 'Tout savoir sur la déclaration de changement d\'adresse en Belgique : démarches obligatoires, délais, documents, organismes à prévenir. Guide pratique avec checklist complète.',
+        'image' => 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800',
         'category' => 'Conseils',
-        'date' => '2024-11-10',
-        'read_time' => '7 min',
-        'author' => 'Sophie Lambert'
+        'date' => '2024-11-12',
+        'read_time' => '10 min',
+        'author' => 'Sophie Martin'
     ],
     [
         'id' => 4,
-        'title' => 'Déménager avec des enfants : guide complet',
-        'slug' => 'demenager-avec-enfants-guide-complet',
-        'excerpt' => 'Comment gérer un déménagement en famille ? Tous nos conseils pour impliquer les enfants et rendre cette transition plus facile pour eux.',
-        'image' => 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=800',
+        'title' => 'Déménager avec des Enfants : 15 Conseils de Parents Experts',
+        'slug' => 'demenager-avec-enfants-conseils',
+        'excerpt' => 'Guide complet pour déménager sereinement avec des enfants. Préparation psychologique, organisation, astuces par âge, gestion du stress et adaptation au nouveau logement.',
+        'image' => 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800',
         'category' => 'Famille',
-        'date' => '2024-11-08',
-        'read_time' => '9 min',
-        'author' => 'Jean Leroy'
+        'date' => '2024-11-13',
+        'read_time' => '14 min',
+        'author' => 'Julie Vandenberg'
     ],
     [
         'id' => 5,
-        'title' => 'Checklist du carton parfait : emballer comme un pro',
-        'slug' => 'checklist-carton-parfait-emballer-pro',
-        'excerpt' => 'Apprenez les techniques professionnelles d\'emballage. Protégez vos objets fragiles et optimisez l\'espace dans vos cartons.',
-        'image' => 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800',
+        'title' => 'Guide Complet : Emballer vos Objets Fragiles comme un Pro',
+        'slug' => 'emballage-objets-fragiles',
+        'excerpt' => 'Techniques professionnelles pour emballer vaisselle, verres, miroirs, électronique et objets d\'art. Matériaux nécessaires, étapes détaillées et erreurs à éviter pour un déménagement sans casse.',
+        'image' => 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800',
         'category' => 'Emballage',
-        'date' => '2024-11-05',
-        'read_time' => '5 min',
-        'author' => 'Marie Dubois'
+        'date' => '2024-11-14',
+        'read_time' => '15 min',
+        'author' => 'Laurent Dubois'
     ],
     [
         'id' => 6,
-        'title' => 'Déménagement international : tout ce qu\'il faut savoir',
-        'slug' => 'demenagement-international-guide',
-        'excerpt' => 'Partir à l\'étranger ? Formalités douanières, transport, assurance... tout ce que vous devez savoir pour un déménagement international réussi.',
-        'image' => 'https://images.unsplash.com/photo-1607827448387-a67db1383b59?w=800',
+        'title' => 'Déménagement International depuis la Belgique : Guide Complet 2024',
+        'slug' => 'demenagement-international-belgique',
+        'excerpt' => 'Tout savoir pour déménager à l\'étranger depuis la Belgique : démarches, douanes, coûts, assurances, choix du déménageur international. Guide pratique pays par pays.',
+        'image' => 'https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=800',
         'category' => 'International',
-        'date' => '2024-11-03',
-        'read_time' => '12 min',
-        'author' => 'Pierre Martin'
+        'date' => '2024-11-15',
+        'read_time' => '18 min',
+        'author' => 'Alexandre Mercier'
     ]
 ];
 

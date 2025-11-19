@@ -38,6 +38,11 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. Tous droits réservés.</p>
+                <div style="margin-top: 15px;">
+                    <a href="/mentions-legales.php" style="color: rgba(255,255,255,0.7); margin: 0 15px; text-decoration: none;">Mentions Légales</a>
+                    <a href="/politique-confidentialite.php" style="color: rgba(255,255,255,0.7); margin: 0 15px; text-decoration: none;">Politique de Confidentialité</a>
+                    <a href="/temoignages.php" style="color: rgba(255,255,255,0.7); margin: 0 15px; text-decoration: none;">Témoignages</a>
+                </div>
             </div>
         </div>
     </footer>

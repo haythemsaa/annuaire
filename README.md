@@ -1,155 +1,165 @@
-# Annuaire de Déménageurs
+# 🏠 Annuaire de Déménageurs Belgique
 
-Site d'annuaire professionnel pour entreprises de déménagement, inspiré de demenagementbruxelles.be
+> **Plateforme complète de comparaison et mise en relation avec des déménageurs professionnels en Belgique**
 
-## 🎯 Fonctionnalités
+---
 
-### Pages principales
-- **Page d'accueil** (index.html) - Liste des entreprises avec système de recherche et filtres
-- **Demande de devis** (devis.html) - Formulaire complet pour obtenir des devis gratuits
-- **Contact** (contact.html) - Formulaire de contact et FAQ
-- **Détails entreprise** (company-detail.html) - Page détaillée pour chaque entreprise
+## 📋 Présentation
 
-### Fonctionnalités clés
+**Annuaire de Déménageurs Belgique** est une plateforme web complète permettant aux particuliers et entreprises de comparer les déménageurs professionnels, obtenir jusqu'à 5 devis gratuits, et accéder à des outils interactifs et guides experts.
 
-#### ✅ Recherche et filtrage
-- Recherche par mots-clés (nom, description, localisation)
-- Filtre par service (déménagement, emballage, lift, stockage, montage)
-- Filtre par zone géographique (Bruxelles, Wallonie, Flandre)
-- Filtre par gamme de prix (€, €€, €€€)
+### 🏆 Chiffres Clés
 
-#### 📝 Formulaire de devis
-- Type de déménagement (résidentiel, commercial, bureau)
-- Adresses de départ et d'arrivée
-- Nombre d'étages et disponibilité ascenseur
-- Taille du logement (nombre de pièces, surface)
-- Services supplémentaires (emballage, montage, lift, stockage, nettoyage)
-- Date et flexibilité
-- Validation des données
+- **60+ entreprises** de déménagement répertoriées
+- **6 articles de blog** de 2500+ mots chacun
+- **19 fonctionnalités** majeures
+- **25+ pages** complètes
+- **Analytics complet** Google Analytics + Facebook Pixel + Hotjar + tracking interne
+- **RGPD conforme** avec politique confidentialité complète
 
-#### 🏢 Profils d'entreprises
-- Informations complètes (description, services, zones)
-- Système de notation avec étoiles
-- Avis clients
-- Coordonnées de contact
-- Tarifs indicatifs
-- Garanties et certifications
+---
 
-#### 📱 Design responsive
-- Adapté mobile, tablette et desktop
-- Navigation intuitive
-- Interface moderne et professionnelle
+## ✨ Fonctionnalités Principales
 
-## 🗂️ Structure du projet
+### 🔧 Outils Interactifs
 
-```
-annuaire/
-├── index.html              # Page d'accueil
-├── devis.html              # Formulaire de demande de devis
-├── contact.html            # Page de contact
-├── company-detail.html     # Page détail entreprise
-├── css/
-│   └── style.css          # Styles principaux
-├── js/
-│   ├── data.js            # Données des entreprises
-│   ├── app.js             # Logic page d'accueil
-│   ├── company-detail.js  # Logic page détail
-│   ├── devis.js           # Logic formulaire devis
-│   └── contact.js         # Logic formulaire contact
-└── images/                # Dossier pour les images
-```
+1. **Calculateur de Volume** - Estimation précise du volume à déménager
+2. **Comparateur d'Entreprises** - Comparaison jusqu'à 3 déménageurs
+3. **Checklist Interactive** - 150+ tâches avec sauvegarde localStorage
+4. **Guide des Tarifs** - Grilles tarifaires + simulateur
+5. **Carte Interactive Leaflet** - Visualisation géographique des déménageurs
 
-## 🚀 Installation et utilisation
+### 📚 Blog SEO (6 Articles de 2500+ Mots)
 
-### Méthode simple
-1. Ouvrir `index.html` directement dans un navigateur web
+- Comment préparer son déménagement 3 mois à l'avance
+- Budget réaliste pour un déménagement en Belgique 2024
+- Changement d'adresse en Belgique : Guide complet 2024
+- Déménager avec des enfants : 15 conseils d'experts
+- Emballer vos objets fragiles comme un pro
+- Déménagement international depuis la Belgique
 
-### Avec serveur local (recommandé)
+### 📧 Newsletter + 💬 Témoignages + ⚖️ RGPD
+
+- Système double opt-in
+- 12 témoignages vérifiés
+- Politique confidentialité complète
+- Mentions légales
+
+---
+
+## 🛠 Technologies
+
+- **Backend:** PHP 7.4+, SQLite/MySQL, PDO
+- **Frontend:** HTML5, CSS3, JavaScript ES6+, Leaflet.js
+- **Analytics:** Google Analytics 4, Facebook Pixel, Hotjar
+- **SEO:** Schema.org (6 types), Sitemap.xml, Robots.txt
+
+---
+
+## 📥 Installation Rapide
+
 ```bash
-# Avec Python 3
-python -m http.server 8000
+# 1. Cloner
+git clone https://github.com/votre-username/annuaire.git
+cd annuaire
 
-# Avec Node.js (http-server)
-npx http-server
+# 2. Créer dossier données
+mkdir -p data && chmod 755 data
 
-# Avec PHP
+# 3. Configuration
+cp config/config.example.php config/config.php
+nano config/config.php
+
+# 4. Initialiser BDD
+php init_db.php
+
+# 5. Remplir avec données test
+php populate_database.php
+
+# 6. Lancer serveur
 php -S localhost:8000
 ```
 
-Puis ouvrir http://localhost:8000 dans votre navigateur.
+Puis ouvrir `http://localhost:8000`
 
-## 🎨 Personnalisation
+---
 
-### Modifier les couleurs
-Éditez les variables CSS dans `css/style.css` :
-```css
-:root {
-    --primary-color: #2563eb;      /* Couleur principale */
-    --secondary-color: #1e40af;    /* Couleur secondaire */
-    --accent-color: #f59e0b;       /* Couleur accent */
-}
+## 📁 Structure
+
+```
+annuaire/
+├── api/                    # APIs (newsletter, tracking)
+├── blog/                   # 6 articles complets
+├── config/                 # Configuration
+├── data/                   # Base SQLite
+├── includes/               # Header, footer, analytics
+├── assets/                 # CSS, JS, images
+├── *.php                   # 25+ pages
+├── sitemap.xml            # SEO
+├── robots.txt             # Crawlers
+└── README.md              # Documentation
 ```
 
-### Ajouter des entreprises
-Éditez le fichier `js/data.js` et ajoutez des entrées dans le tableau `companies` :
-```javascript
-{
-    id: 11,
-    name: "Nom de l'entreprise",
-    location: "Ville",
-    zone: "bruxelles", // bruxelles, wallonie, ou flandre
-    rating: 4.5,
-    reviews: 50,
-    description: "Description de l'entreprise",
-    services: ["demenagement", "emballage", "lift"],
-    priceRange: "medium", // low, medium, ou high
-    priceLabel: "€€",
-    phone: "+32 2 XXX XX XX",
-    email: "contact@entreprise.be",
-    website: "www.entreprise.be",
-    address: "Adresse complète",
-    zones: "Zones d'intervention",
-    verified: true
-}
-```
+---
 
-### Modifier les services disponibles
-Éditez `serviceLabels` dans `js/data.js` pour ajouter ou modifier les services.
+## 🗄️ Base de Données
 
-## 📋 Fonctionnalités à développer (backend)
+**Tables principales:**
 
-Le site actuel fonctionne en front-end uniquement. Pour une version production complète, il faudrait :
+- `companies` - Entreprises de déménagement (60+)
+- `newsletter_subscribers` - Abonnés newsletter
+- `analytics_events` - Tracking interne
+- `quote_requests` - Demandes de devis
 
-1. **Backend API**
-   - Enregistrement des demandes de devis
-   - Stockage des messages de contact
-   - Gestion des entreprises (CRUD)
-   - Système d'authentification
+---
 
-2. **Base de données**
-   - Entreprises
-   - Devis
-   - Messages de contact
-   - Avis clients
+## 📊 Analytics
 
-3. **Fonctionnalités supplémentaires**
-   - Panneau d'administration
-   - Envoi d'emails automatiques
-   - Système de paiement
-   - Gestion des avis clients
-   - Statistiques et analytics
+**Tracking automatique:**
 
-## 🌐 Technologies utilisées
+- Clics boutons/CTA
+- Soumissions formulaires
+- Clics téléphone (conversions)
+- Téléchargements PDF
+- Scroll profond
+- Temps sur page
+- Favoris
+- Recherches
 
-- HTML5
-- CSS3 (Flexbox, Grid, Variables CSS)
-- JavaScript (ES6+)
-- Font Awesome 6.4.0 (icônes)
+---
 
-## 📄 Licence
+## 🔍 SEO
 
-Projet créé pour usage personnel/commercial.
+- ✅ Schema.org (WebSite, Organization, ItemList, LocalBusiness, BlogPosting, FAQPage)
+- ✅ Sitemap.xml complet
+- ✅ Robots.txt optimisé
+- ✅ Meta tags
+- ✅ Rich snippets
+- ✅ 6 articles blog optimisés
 
-## 🤝 Support
+---
 
-Pour toute question ou suggestion, utilisez la page de contact du site.
+## ⚖️ RGPD
+
+- ✅ Politique de confidentialité
+- ✅ Mentions légales
+- ✅ Cookie consent
+- ✅ Droits utilisateurs
+- ✅ Conformité totale
+
+---
+
+## 📞 Support
+
+- **Email:** support@votresite.be
+- **GitHub Issues:** [Issues](https://github.com/votre-repo/issues)
+
+---
+
+## 📜 License
+
+MIT License - Voir [LICENSE](LICENSE)
+
+---
+
+**Fait avec ❤️ en Belgique 🇧🇪**
