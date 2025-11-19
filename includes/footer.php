@@ -167,5 +167,9 @@
     <script src="<?php echo ASSETS_PATH; ?>/js/main.js"></script>
     <script src="<?php echo ASSETS_PATH; ?>/js/favorites.js"></script>
     <script src="<?php echo ASSETS_PATH; ?>/js/share.js"></script>
+
+    <!-- Analytics et Tracking -->
+    <?php include __DIR__ . '/analytics.php'; ?>
+
 </body>
 </html>
